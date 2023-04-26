@@ -1,17 +1,18 @@
 import { Router } from "express";
 import { createUserController, loginController } from "../controllers/user";
 import { body } from "express-validator";
-import { validator, login } from "../middlewares";
+import { validator, login, existUser } from "../middlewares";
 
 const router = Router();
 
 router.post("/signup", [
-    body(["name", "password", "username", "email"]),
+    body(["name", "password", "username", "email"]).notEmpty(),
+    existUser,
     validator,
 ], createUserController);
 
 router.post("/login", [
-    body(["password", "username", "email"]),
+    body(["password", "username", "email"]).notEmpty(),
     login,
     validator,
 ], loginController)

@@ -4,7 +4,7 @@ const login = () => {
     return async (req: Request, res: Response, next: NextFunction) => {
         try {
             const { username, email } = req.body;
-            const existUser = await User.find({ $or: [{ username }, { email }] })
+            const existUser = await User.findOne({ $or: [{ username }, { email }] })
             if (!existUser) return res.status(404).json({ message: 'User not found' });
             req.body.user = existUser;
             next()

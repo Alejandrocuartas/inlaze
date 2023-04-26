@@ -1,7 +1,7 @@
 import UserRouter from "./user"
-import DayRouter from "./day"
+import MessageRouter from "./message"
 
 export {
     UserRouter,
-    DayRouter,
+    MessageRouter,
 }

@@ -11,8 +11,8 @@ const sessionHandler = () => {
             })
         }
         try {
-            const { username } = jwt.verify(token, process.env.JWT_KEY)
-            req.body.userId = username
+            const { id } = jwt.verify(token, process.env.JWT_KEY)
+            req.body.userId = id
             next()
         } catch (error) {
             return res.status(401).json({

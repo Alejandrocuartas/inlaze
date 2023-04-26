@@ -2,7 +2,7 @@ import express from 'express';
 const cors = require('cors');
 
 import dbConnector from './data-access';
-import { DayRouter, UserRouter } from './routes';
+import { MessageRouter, UserRouter } from './routes';
 
 class ServerModel {
     private origin
@@ -33,7 +33,7 @@ class ServerModel {
 
     routes() {
         this.app.use("/api/user", UserRouter)
-        this.app.use("/api/message/create", DayRouter)
+        this.app.use("/api/message", MessageRouter)
     }
 
     listen() {
