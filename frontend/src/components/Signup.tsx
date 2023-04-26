@@ -24,7 +24,6 @@ const SignUp = ({ onLogin }: { onLogin: () => void }) => {
                 setLoading(false)
                 return alert("there was an error whil signing up. Please try again.")
             }
-            console.log(r.headers.get("Authorization"))
             return r.json()
         }).then((res: { user: UserType }) => {
             setLoading(false)
