@@ -1,13 +1,19 @@
 import { Router } from "express";
-import { createUserController } from "../controllers/user";
+import { createUserController, loginController } from "../controllers/user";
 import { body } from "express-validator";
-import { validator } from "../middlewares";
+import { validator, login } from "../middlewares";
 
 const router = Router();
 
 router.post("/signup", [
     body(["name", "password", "username", "email"]),
-    validator
+    validator,
 ], createUserController);
+
+router.post("/login", [
+    body(["password", "username", "email"]),
+    login,
+    validator,
+], loginController)
 
 export default router;

@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { signup } from "../use-cases";
 import jwtGenerator from "../helpers/jwtGenerator";
 import encryptPassword from "../helpers/encryptPass";
+import checkPass from "../helpers/checkPassword";
 
 const createUserController = async (req: Request, res: Response) => {
     try {
@@ -15,6 +16,25 @@ const createUserController = async (req: Request, res: Response) => {
     }
 }
 
+const loginController = async (req: Request, res: Response) => {
+    try {
+        const { password } = req.body;
+        const { name, username, email } = req.body.user;
+        const userPass = req.body.user.password;
+        const isCorrectPass = checkPass(password, userPass);
+        if (!isCorrectPass) return res.status(404).json({ message: "incorrect password" });
+        const jwt = await jwtGenerator(username)
+        return res.setHeader("Authorization", jwt).status(200).json({
+            username,
+            name,
+            email
+        });
+    } catch (error) {
+        return res.status(500).json({ error });
+    }
+}
+
 export {
     createUserController,
+    loginController,
 }
