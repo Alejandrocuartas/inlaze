@@ -6,8 +6,8 @@ const router = Router();
 
 router.post("/create", [
     body(["title", "text"]).notEmpty(),
-    sessionHandler,
     validator,
+    sessionHandler,
 ], createMessageController);
 
 router.get("/", [

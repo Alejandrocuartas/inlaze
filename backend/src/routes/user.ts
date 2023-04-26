@@ -7,14 +7,14 @@ const router = Router();
 
 router.post("/signup", [
     body(["name", "password", "username", "email"]).notEmpty(),
-    existUser,
     validator,
+    existUser,
 ], createUserController);
 
 router.post("/login", [
     body(["password", "username", "email"]).notEmpty(),
-    login,
     validator,
+    login,
 ], loginController)
 
 export default router;
