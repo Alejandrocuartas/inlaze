@@ -8,22 +8,22 @@
 
 1. Clone the repository to your local machine:
 
-git clone https://github.com/Alejandrocuartas/inlaze.git
+    git clone https://github.com/Alejandrocuartas/inlaze.git
 
 2. Navigate to the root directory of the repository:
 
-cd backend
+    cd backend
 
 3. Create a `.env` file in the root directory of the repository and fill it with the appropriate environmental variables:
 
-MONGODB_URI=<your MongoDB URI>  
-PORT=<the port number you want to use>  
-ORIGIN=<the origin URL for CORS>  
-JWT_KEY=<your JWT secret key>
+    MONGODB_URI=<your MongoDB URI>  
+    PORT=<the port number you want to use>  
+    ORIGIN=<the origin URL for CORS>  
+    JWT_KEY=<your JWT secret key>
 
 4. Install the dependencies:
 
-npm install
+    npm install
 
 ## Usage
 
@@ -65,11 +65,11 @@ The following dependencies are used in this project:
 
 1. Navigate to the root directory of the repository:
 
-cd frontend
+    cd frontend
 
 2. Install the dependencies:
 
-npm install
+    npm install
 
 
 ## Usage
