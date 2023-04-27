@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./styles/Signup.css"
 import { UserType } from "../types";
 import { useGlobalState } from "../context";
+import { useNavigate } from "react-router-dom";
 const SignUp = ({ onLogin }: { onLogin: () => void }) => {
+    const navigate = useNavigate()
     const { setUser } = useGlobalState()
     const [loading, setLoading] = useState(false)
     const signup = (e: any) => {
@@ -25,14 +27,16 @@ const SignUp = ({ onLogin }: { onLogin: () => void }) => {
                 return alert("there was an error whil signing up. Please try again.")
             }
             return r.json()
-        }).then((res: { user: UserType }) => {
+        }).then((res: { user: UserType, jwt: string }) => {
             setLoading(false)
             setUser({
                 name: res.user.name,
                 username: res.user.username,
                 email: res.user.email,
                 _id: res.user._id,
+                jwt: res.jwt,
             })
+            navigate("/")
         })
     }
     return (
@@ -47,8 +51,14 @@ const SignUp = ({ onLogin }: { onLogin: () => void }) => {
                 <input name="username" type="text" placeholder="Username" id="username" />
                 <label htmlFor="password">Password</label>
                 <input name="password" type="password" placeholder="Password" id="password" />
-                <button type="submit">Sign Up</button>
-                <button onClick={onLogin}>Log In</button>
+                {
+                    loading ? "Loading..." : (
+                        <div>
+                            <button type="submit">Sign Up</button>
+                            <button onClick={onLogin}>Log In</button>
+                        </div>
+                    )
+                }
             </form>
         </div>
     )

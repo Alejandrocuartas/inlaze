@@ -8,5 +8,5 @@ export type UserType = {
     name: string;
     username: string;
     email: string;
-    jwt?: string;
+    jwt: string;
 }

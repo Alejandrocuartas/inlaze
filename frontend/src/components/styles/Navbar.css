@@ -6,6 +6,7 @@ body {
     margin: 0px;
     font-family: 'segoe ui';
     background-color: #01003f;
+    color: #d4ff48;
 }
 
 .nav {
@@ -71,6 +72,7 @@ body {
     overflow-y: hidden;
     top: 50px;
     right: 0px;
+    color: black;
 }
 
 .nav>.nav-links>div>p {

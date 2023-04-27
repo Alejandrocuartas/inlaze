@@ -10,7 +10,7 @@ const createUserController = async (req: Request, res: Response) => {
         const hash = encryptPassword(password);
         const user = await signup(name, username, email, hash);
         const jwt = await jwtGenerator(user._id.toString())
-        return res.setHeader("Authorization", jwt).status(200).json({ user });
+        return res.setHeader("Authorization", jwt).status(200).json({ user, jwt });
     } catch (error) {
         return res.status(500).json({ error });
     }
@@ -27,7 +27,9 @@ const loginController = async (req: Request, res: Response) => {
         return res.setHeader("Authorization", jwt).status(200).json({
             username,
             name,
-            email
+            email,
+            _id,
+            jwt,
         });
     } catch (error) {
         return res.status(500).json({ error });
