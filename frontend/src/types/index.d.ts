@@ -4,9 +4,17 @@ export type GlobalContextType = {
 };
 
 export type UserType = {
-    _id: Types.ObjectId;
+    _id: string;
     name: string;
     username: string;
     email: string;
     jwt: string;
+}
+
+export type MessageType = {
+    _id: string;
+    title: string;
+    text: string;
+    date: string;
+    user: UserType;
 }

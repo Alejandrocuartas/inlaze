@@ -13,7 +13,8 @@
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1200px;
-    margin-block: 2rem;
+    margin-block: 1rem;
+    margin-left: 20px;
     gap: 2rem;
 }
 
@@ -90,7 +91,28 @@
     color: #666;
 }
 
+.date {
+    display: flex;
+    flex-direction: column;
+}
+
 .date>small {
     margin-bottom: 0px;
     color: #666;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        margin-block: 5px;
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        max-width: 45%;
+        margin-block: 5px;
+        margin-left: 5px;
+    }
 }

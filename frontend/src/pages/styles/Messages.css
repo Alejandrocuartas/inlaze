@@ -1,0 +1,17 @@
+.messages-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.search {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    margin-bottom: 20px;
+}
+
+.search>input {
+    color: #d4ff48;
+    border-color: white;
+}
