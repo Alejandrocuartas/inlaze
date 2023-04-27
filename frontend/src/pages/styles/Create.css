@@ -1,0 +1,28 @@
+h1 {
+    margin-left: 1rem;
+}
+
+.form {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 20px;
+}
+
+.form>input {
+    color: #d4ff48;
+    border-color: white;
+}
+
+.publish-button {
+    width: 30%;
+    left: 70%;
+}
+
+.butt {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input-text {
+    height: 5rem;
+}

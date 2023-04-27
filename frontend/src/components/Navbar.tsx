@@ -31,7 +31,7 @@ const Navbar = () => {
                             </label>
                         </div>
                         <div className="nav-links">
-                            <h3 className="name">Alejo</h3>
+                            <h3 className="name">{user.name}</h3>
                             <div onClick={
                                 () => navigate("/create")
                             } className="item-menu">

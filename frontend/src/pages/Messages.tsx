@@ -14,9 +14,13 @@ const Messages = () => {
         if (searchText === "") {
             setReset(!reset)
         }
-        setMessages(messages.filter(m => {
-            return m.text.includes(searchText.toLowerCase()) || m.title.includes(searchText.toLowerCase())
-        }))
+        const newList = messages.filter(m => {
+            return m.text.toLowerCase().includes(searchText.toLowerCase()) || m.title.toLowerCase().includes(searchText.toLowerCase())
+        })
+        if (newList.length === 0) {
+            return alert("There is not matching messages.")
+        }
+        setMessages(newList)
     }
     const searchDate = (e: React.ChangeEvent<HTMLInputElement>) => {
         const date = e.target.value
