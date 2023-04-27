@@ -1,3 +1,8 @@
+# Try the app on production
+
+  `App url`: https://wires-inlaze.netlify.app  
+  `API url`: https://wires-inlaze.onrender.com
+  
 # inlaze-back
 
 ## Description
