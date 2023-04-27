@@ -16,9 +16,9 @@ cd backend
 
 3. Create a `.env` file in the root directory of the repository and fill it with the appropriate environmental variables:
 
-MONGODB_URI=<your MongoDB URI>
-PORT=<the port number you want to use>
-ORIGIN=<the origin URL for CORS>
+MONGODB_URI=<your MongoDB URI>  
+PORT=<the port number you want to use>  
+ORIGIN=<the origin URL for CORS>  
 JWT_KEY=<your JWT secret key>
 
 4. Install the dependencies:
