@@ -9,7 +9,7 @@ export type UserType = {
     username: string;
     email: string;
     jwt: string;
-}
+};
 
 export type MessageType = {
     _id: string;
@@ -17,4 +17,4 @@ export type MessageType = {
     text: string;
     date: string;
     user: UserType;
-}
+};
